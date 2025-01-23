@@ -13,7 +13,7 @@ HackerNews 2.0 is a modern, responsive web application that provides an improved
 
 ## Demo
 
-[Live Demo](#) (Coming Soon)
+[Live Demo](https://hackernewspro.netlify.app/) (Coming Soon)
 
 ## Installation
 

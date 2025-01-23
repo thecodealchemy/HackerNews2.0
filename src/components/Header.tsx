@@ -13,8 +13,7 @@ export function Header({ darkMode, onToggleDarkMode }: HeaderProps) {
         onClick={onToggleDarkMode}
         className="bg-white dark:bg-gray-800 text-orange-500 dark:text-orange-400 hover:bg-orange-100 dark:hover:bg-gray-700 px-4 py-2 rounded-full shadow-lg text-sm font-semibold flex items-center gap-2 transition-colors"
       >
-        {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-        {darkMode ? 'Light Mode' : 'Dark Mode'}
+        {darkMode ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
       </button>
       <div className="bg-orange-500 text-white px-4 py-2 rounded-full shadow-lg text-sm font-semibold">
         Hacker News 2.0

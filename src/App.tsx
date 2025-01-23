@@ -92,7 +92,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-orange-50 dark:bg-gray-900 relative pt-4">
+    <div className="min-h-screen bg-orange-50 dark:bg-gray-900 relative pt-8">
       <Header 
         darkMode={darkMode}
         onToggleDarkMode={() => setDarkMode(!darkMode)}
