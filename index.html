@@ -1,14 +1,26 @@
 <!doctype html>
 <html lang="en" class="h-full">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/webp" href="/src/utils/HackerNews2.0_logo.webp" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A modern interface for Hacker News" />
-    <title>Hacker News 2.0</title>
-  </head>
-  <body class="h-full">
-    <div id="root" class="h-full"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/webp" href="/src/utils/HackerNews2.0_logo.webp" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A modern interface for Hacker News" />
+  <title>Hacker News 2.0</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4F58JELQ9N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-4F58JELQ9N');
+  </script>
+</head>
+
+<body class="h-full">
+  <div id="root" class="h-full"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>
