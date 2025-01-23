@@ -47,7 +47,7 @@ function App() {
       setStoryIds(ids);
       setLoading(false);
 
-      await loadMoreStories(ids.slice(0, 30));
+      await loadMoreStories(ids.slice(0, 30), 0); // load with 0 delay
 
       setRefreshing(false);
     } catch (error) {
@@ -57,11 +57,11 @@ function App() {
     }
   };
 
-  const loadMoreStories = async (ids: number[]) => {
+  const loadMoreStories = async (ids: number[], timedelay: number = 100) => {
     setLoadingMore(true);
 
     for (const id of ids) {
-      await delay(100); // 10 requests per second
+      await delay(timedelay); // 10 requests per second
       const story = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(res => res.json());
       setStories(prevStories => [...prevStories, story]);
     }
