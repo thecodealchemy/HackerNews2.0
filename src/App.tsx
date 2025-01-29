@@ -18,10 +18,9 @@ function App() {
   const [loadingMore, setLoadingMore] = useState(false);
 
   const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return document.documentElement.classList.contains('dark');
-    }
-    return false;
+    // Check localStorage for saved preference first
+    const savedDarkMode = localStorage.getItem('darkMode');
+    return savedDarkMode ? JSON.parse(savedDarkMode) : false;
   });
 
   const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
@@ -32,6 +31,8 @@ function App() {
     } else {
       document.documentElement.classList.remove('dark');
     }
+    // Persist the current mode to localStorage
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
   }, [darkMode]);
 
   const fetchStories = async (type: StoryType) => {
@@ -133,7 +134,7 @@ function App() {
       />
 
       <main className="container mx-auto px-4" style={{ maxWidth: 'fit-content' }}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-min">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-auto [grid-template-rows:masonry]">
           {stories.map((story, index) => (
             <StoryCard
               key={story.id}

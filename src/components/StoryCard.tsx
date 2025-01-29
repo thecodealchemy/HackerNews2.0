@@ -34,11 +34,10 @@ export function StoryCard({
 
   return (
     <div 
-  className={`bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 transition-all hover:shadow-lg ${
-    story.title.length > 80 ? 'md:col-span-2' : ''
-  } ${
-    story.score > 500 ? 'lg:col-span-2' : ''
-  }`}
+  className={`bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 transition-all hover:shadow-lg 
+    ${story.title.length > 80 ? 'md:col-span-2' : '' }
+    ${story.text && story.text.length > 80 ? 'md:col-span-2' : '' }
+    `}
 >
       <div className="flex items-start space-x-3">
         <span className="text-gray-500 dark:text-gray-400 font-mono text-sm">{index + 1}</span>
